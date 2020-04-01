@@ -27,6 +27,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal_def.h"
+#include "stm32f4xx_hal_dma.h"
 
 /** @addtogroup STM32F4xx_HAL_Driver
   * @{
@@ -611,7 +612,7 @@ uint32_t               HAL_USART_GetError(USART_HandleTypeDef *husart);
 
   /* UART BRR = mantissa + overflow + fraction
               = (UART DIVMANT << 4) + ((UART DIVFRAQ & 0xF8) << 1) + (UART DIVFRAQ & 0x07U) */
-              
+
 #define USART_BRR(_PCLK_, _BAUD_)      (((USART_DIVMANT((_PCLK_), (_BAUD_)) << 4U) + \
                                         ((USART_DIVFRAQ((_PCLK_), (_BAUD_)) & 0xF8U) << 1U)) + \
                                          (USART_DIVFRAQ((_PCLK_), (_BAUD_)) & 0x07U))
