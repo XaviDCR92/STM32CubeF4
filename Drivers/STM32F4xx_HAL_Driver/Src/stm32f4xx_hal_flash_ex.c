@@ -159,7 +159,7 @@ extern HAL_StatusTypeDef         FLASH_WaitForLastOperation(uint32_t Timeout);
   * 
   * @retval HAL Status
   */
-HAL_StatusTypeDef HAL_FLASHEx_Erase(FLASH_EraseInitTypeDef *pEraseInit, uint32_t *SectorError)
+HAL_StatusTypeDef HAL_FLASHEx_Erase(const FLASH_EraseInitTypeDef *pEraseInit, uint32_t *SectorError)
 {
   HAL_StatusTypeDef status = HAL_ERROR;
   uint32_t index = 0U;
@@ -230,7 +230,7 @@ HAL_StatusTypeDef HAL_FLASHEx_Erase(FLASH_EraseInitTypeDef *pEraseInit, uint32_t
   * 
   * @retval HAL Status
   */
-HAL_StatusTypeDef HAL_FLASHEx_Erase_IT(FLASH_EraseInitTypeDef *pEraseInit)
+HAL_StatusTypeDef HAL_FLASHEx_Erase_IT(const FLASH_EraseInitTypeDef *pEraseInit)
 {
   HAL_StatusTypeDef status = HAL_OK;
 
@@ -283,7 +283,7 @@ HAL_StatusTypeDef HAL_FLASHEx_Erase_IT(FLASH_EraseInitTypeDef *pEraseInit)
   * 
   * @retval HAL Status
   */
-HAL_StatusTypeDef HAL_FLASHEx_OBProgram(FLASH_OBProgramInitTypeDef *pOBInit)
+HAL_StatusTypeDef HAL_FLASHEx_OBProgram(const FLASH_OBProgramInitTypeDef *pOBInit)
 {
   HAL_StatusTypeDef status = HAL_ERROR;
   
@@ -342,7 +342,7 @@ HAL_StatusTypeDef HAL_FLASHEx_OBProgram(FLASH_OBProgramInitTypeDef *pOBInit)
   * 
   * @retval None
   */
-void HAL_FLASHEx_OBGetConfig(FLASH_OBProgramInitTypeDef *pOBInit)
+void HAL_FLASHEx_OBGetConfig(const FLASH_OBProgramInitTypeDef *pOBInit)
 {
   pOBInit->OptionType = OPTIONBYTE_WRP | OPTIONBYTE_RDP | OPTIONBYTE_USER | OPTIONBYTE_BOR;
 
@@ -371,7 +371,7 @@ void HAL_FLASHEx_OBGetConfig(FLASH_OBProgramInitTypeDef *pOBInit)
   * 
   * @retval HAL Status
   */
-HAL_StatusTypeDef HAL_FLASHEx_AdvOBProgram (FLASH_AdvOBProgramInitTypeDef *pAdvOBInit)
+HAL_StatusTypeDef HAL_FLASHEx_AdvOBProgram (const FLASH_AdvOBProgramInitTypeDef *pAdvOBInit)
 {
   HAL_StatusTypeDef status = HAL_ERROR;
   
