@@ -342,7 +342,7 @@ HAL_StatusTypeDef HAL_FLASHEx_OBProgram(const FLASH_OBProgramInitTypeDef *pOBIni
   * 
   * @retval None
   */
-void HAL_FLASHEx_OBGetConfig(const FLASH_OBProgramInitTypeDef *pOBInit)
+void HAL_FLASHEx_OBGetConfig(FLASH_OBProgramInitTypeDef *pOBInit)
 {
   pOBInit->OptionType = OPTIONBYTE_WRP | OPTIONBYTE_RDP | OPTIONBYTE_USER | OPTIONBYTE_BOR;
 
